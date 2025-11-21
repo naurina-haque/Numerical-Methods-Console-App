@@ -1,0 +1,97 @@
+##Solution of 1st input matrix
+Lower triangular Matrix
+1 0 0
+2 1 0
+0 0 1
+Upper triangular Matrix
+2 3 -1
+0 1 2
+-2 5 3
+Upper triangular Matrix
+2 3 -1
+0 -5 2
+-2 5 3
+Upper triangular Matrix
+2 3 -1
+0 -5 4
+-2 5 3
+Upper triangular Matrix
+2 3 -1
+0 -5 4
+-2 5 3
+Lower triangular Matrix
+1 0 0
+2 1 0
+-1 0 1
+Upper triangular Matrix
+2 3 -1
+0 -5 4
+0 5 3
+Upper triangular Matrix
+2 3 -1
+0 -5 4
+0 8 3
+Upper triangular Matrix
+2 3 -1
+0 -5 4
+0 8 2
+Upper triangular Matrix
+2 3 -1
+0 -5 4
+0 8 2
+Lower triangular Matrix
+1 0 0
+2 1 0
+-1 -1.6 1
+Upper triangular Matrix
+2 3 -1
+0 -5 4
+0 0 2
+Upper triangular Matrix
+2 3 -1
+0 -5 4
+0 0 8.4
+Upper triangular Matrix
+2 3 -1
+0 -5 4
+0 0 8.4
+System has Unique Solution
+Value of y
+5 -4 10.6
+Value of x
+0.417 1.81 1.26
+Solve another system?(y/n)
+
+
+##Solution of 2nd input matrix
+Lower triangular Matrix
+1 0
+2 1
+Upper triangular Matrix
+1 1
+0 2
+Upper triangular Matrix
+1 1
+0 0
+Upper triangular Matrix
+1 1
+0 0
+Infinite Solution
+Solve another system?(y/n)
+
+
+##Solution of 3rd input matrix
+Lower triangular Matrix
+1 0
+2 1
+Upper triangular Matrix
+1 1
+0 2
+Upper triangular Matrix
+1 1
+0 0
+Upper triangular Matrix
+1 1
+0 0
+No Solution
+Solve another system?(y/n)
