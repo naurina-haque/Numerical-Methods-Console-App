@@ -4,7 +4,7 @@ This repository features a collection of programs designed to solve numerical pr
 - The theory and description of the method
 - C++ code implementation
 - Sample input and output files
-
-  **Collaborators:**
-  1. Naurina Haque (Github: [naurina-haque](https://github.com/naurina-haque))
-  2. Nashita Binte Hamid (Github: [N-nashita](https://github.com/N-nashita))
+  
+**Collaborators:**
+1. Naurina Haque (Github: [naurina-haque](https://github.com/naurina-haque))
+2. Nashita Binte Hamid (Github: [N-nashita](https://github.com/N-nashita))
