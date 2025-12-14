@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 vector<double> coefficients;
 int n;
+
 double func(double x)
 {
     double sum = 0;
@@ -12,25 +14,37 @@ double func(double x)
     return sum;
 }
 
+double derivative(double x)
+{
+    double sum = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        sum += i * coefficients[i] * pow(x, i - 1);
+    }
+    return sum;
+}
+
 int main()
 {
     ifstream fin("input.txt");
     ofstream fout("output.txt");
-    fout << "=== Bi-section Method ===" << endl;
 
+    fout << "=== Newton-Raphson Method ===" << endl;
     fin >> n;
     coefficients.resize(n + 1);
+
     for (int i = 0; i <= n; i++)
     {
-        fin >> coefficients[i];
+     fin >> coefficients[i];
     }
 
-    fout << "Equation is: ";
+    fout << "\nEquation is: ";
     bool firstTerm = true;
     for (int i = n; i >= 0; i--)
     {
         if (coefficients[i] == 0)
             continue;
+
         if (!firstTerm)
         {
             if (coefficients[i] > 0)
@@ -44,8 +58,10 @@ int main()
                 fout << "-";
             firstTerm = false;
         }
+
         if (fabs(coefficients[i]) != 1.0 || i == 0)
             fout << fabs(coefficients[i]);
+
         if (i > 0)
             fout << "x";
         if (i > 1)
@@ -53,47 +69,50 @@ int main()
     }
     fout << " = 0" << endl;
 
-    vector<pair<double, double>> v;
     int interval_start, interval_end;
-    fin >> interval_start >> interval_end;
-    double step;
-    fin >> step;
-    double tolerance;
-    fin >> tolerance;
+ fin >> interval_start >> interval_end;
 
+    double step;
+ fin >> step;
+
+    double tolerance;
+ fin >> tolerance;
+
+    vector<double> intervals;
     for (double i = interval_start; i < interval_end; i += step)
     {
         if (func(i) * func(i + step) < 0)
         {
-            v.push_back({i, i + step});
+            intervals.push_back(i);
         }
     }
-    fout << "Intervals containing roots: ";
-    for (auto a : v)
-        fout << "{" << a.first << "," << a.second << "}" << "  ";
+
+    fout << "\nIntervals containing roots: ";
+    for (auto a : intervals)
+        fout << "{" << a << "} ";
     fout << endl;
-    double x1, x2;
+    double xn, xn_1;
+    int n;
     vector<double> roots;
-    fout << "Roots are: " << endl;
-    for (auto i = v.begin(); i != v.end(); i++)
+    for (auto it : intervals)
     {
-        x1 = i->first;
-        x2 = i->second;
-        double x0;
-        while (fabs(x2 - x1) > tolerance)
+        xn = it;
+        do
         {
-            x0 = (x1 + x2) / 2.0;
-            if (fabs(func(x0)) < 1e-6)
+            xn_1 = xn - (func(xn) / derivative(xn));
+            n++;
+            if (fabs(xn_1 - xn) < tolerance)
                 break;
-            else if (func(x0) * func(x1) < 0)
-                x2 = x0;
-            else if (func(x0) * func(x2) < 0)
-                x1 = x0;
-        }
-        roots.push_back(x0);
+            xn = xn_1;
+        } while (n < 100);
+        roots.push_back(xn_1);
     }
-    for (int r = 0; r < roots.size(); r++)
-        fout << "Root" << r + 1 << " = " << fixed << setprecision(2) << roots[r] << endl;
+
+    fout << "\nRoots:" << endl;
+    for (size_t r = 0; r < roots.size(); r++)
+    {
+        fout << "Root " << (r + 1) << " = " << fixed << setprecision(6) << roots[r] << endl;
+    }
 
     fin.close();
     fout.close();

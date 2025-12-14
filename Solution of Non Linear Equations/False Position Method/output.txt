@@ -1,0 +1,6 @@
+=== False Position Method ===
+Equation is: x^2 - 4x - 10 = 0
+
+Intervals containing roots: {-2,-1} {5,6} 
+Root 1 = -1.741627
+Root 2 = 5.741627

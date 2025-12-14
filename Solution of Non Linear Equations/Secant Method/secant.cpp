@@ -12,18 +12,19 @@ double f(double p, vector<double> coeffs, double x)
 
 int main()
 {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+    fout << "=== Secant Method ===" << endl;
+
     double n = 0;
-    cout << "Enter degree of polynomial:";
-    cin >> n;
+    fin >> n;
     vector<double> coefficients(n + 1);
-    cout << "Enter coefficients (from constant to highest degree):";
     for (int i = 0; i <= n; i++)
     {
-        cin >> coefficients[i];
+        fin >> coefficients[i];
     }
-    cout << endl;
 
-    cout << "Equation is: ";
+    fout << "Equation is: ";
     bool firstTerm = true;
     for (int i = n; i >= 0; i--)
     {
@@ -32,35 +33,31 @@ int main()
         if (!firstTerm)
         {
             if (coefficients[i] > 0)
-                cout << " + ";
+                fout << " + ";
             else
-                cout << " - ";
+                fout << " - ";
         }
         else
         {
             if (coefficients[i] < 0)
-                cout << "-";
+                fout << "-";
             firstTerm = false;
         }
         if (fabs(coefficients[i]) != 1.0 || i == 0)
-            cout << fabs(coefficients[i]);
+            fout << fabs(coefficients[i]);
         if (i > 0)
-            cout << "x";
+            fout << "x";
         if (i > 1)
-            cout << "^" << i;
+            fout << "^" << i;
     }
-    cout << " = 0" << endl;
+    fout << " = 0" << endl;
 
     double xmax;
-    cout << "Enter max absolute value of x to search for roots: ";
-    cin >> xmax;
+    fin >> xmax;
     double j;
-    cout << endl
-         << "Enter step size for interval search: ";
-    cin >> j;
+    fin >> j;
     double tolance;
-    cout << "Enter tolerance: ";
-    cin >> tolance;
+    fin >> tolance;
 
     vector<pair<double, double>> v;
     for (double i = -fabs(xmax); i < fabs(xmax); i += j)
@@ -68,12 +65,12 @@ int main()
         if (f(n, coefficients, i) * f(n, coefficients, i + j) < 1e-8)
             v.push_back({i, i + j});
     }
-    cout << "\nIntervals containing roots: ";
+    fout << "\nIntervals containing roots: ";
     for (auto i : v)
     {
-        cout << "[" << i.first << "," << i.second << "]" << " ";
+        fout << "[" << i.first << "," << i.second << "]" << " ";
     }
-    cout << endl;
+    fout << endl;
 
     vector<double> roots;
     for (auto it = v.begin(); it != v.end(); it++)
@@ -103,10 +100,13 @@ int main()
         roots.push_back(x0);
     }
 
-    cout << "\nRoots:" << endl;
+    fout << "\nRoots:" << endl;
     for (size_t i = 0; i < roots.size(); i++)
     {
-        cout << "Root " << (i + 1) << " = " << fixed << setprecision(4) << roots[i] << endl;
+        fout << "Root " << (i + 1) << " = " << fixed << setprecision(4) << roots[i] << endl;
     }
+
+    fin.close();
+    fout.close();
     return 0;
 }

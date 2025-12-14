@@ -1,0 +1,8 @@
+=== Secant Method ===
+Equation is: x^2 - 4x - 10 = 0
+
+Intervals containing roots: [-200,0] [0,200] 
+
+Roots:
+Root 1 = -0.0490
+Root 2 = 0.1031

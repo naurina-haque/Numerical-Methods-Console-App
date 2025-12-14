@@ -1,0 +1,9 @@
+=== Newton-Raphson Method ===
+
+Equation is: x^2 - 4x - 10 = 0
+
+Intervals containing roots: {-2} {5} 
+
+Roots:
+Root 1 = -1.750000
+Root 2 = 5.833333

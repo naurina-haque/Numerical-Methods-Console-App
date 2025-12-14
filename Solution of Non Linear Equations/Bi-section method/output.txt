@@ -1,0 +1,6 @@
+=== Bi-section Method ===
+Equation is: x^2 - 4x - 10 = 0
+Intervals containing roots: {-2,-1}  {5,6}  
+Roots are: 
+Root1 = -1.74
+Root2 = 5.74

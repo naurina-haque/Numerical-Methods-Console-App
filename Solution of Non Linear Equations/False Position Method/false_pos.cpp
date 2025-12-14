@@ -13,17 +13,19 @@ double func(int n, vector<double> coefficients, double x)
 
 int main()
 {
+    ifstream fin("input.txt");
+    ofstream fout("output.txt");
+    fout << "=== False Position Method ===" << endl;
+
     int n;
-    cout << "Enter the degree of polynomial: ";
-    cin >> n;
+    fin >> n;
     vector<double> coefficients(n + 1);
-    cout << "Enter the coefficients (from constant to highest degree): ";
     for (int i = 0; i <= n; i++)
     {
-        cin >> coefficients[i];
+        fin >> coefficients[i];
     }
 
-    cout << "Equation is: ";
+    fout << "Equation is: ";
     bool firstTerm = true;
     for (int i = n; i >= 0; i--)
     {
@@ -33,38 +35,35 @@ int main()
         if (!firstTerm)
         {
             if (coefficients[i] > 0)
-                cout << " + ";
+                fout << " + ";
             else
-                cout << " - ";
+                fout << " - ";
         }
         else
         {
             if (coefficients[i] < 0)
-                cout << "-";
+                fout << "-";
             firstTerm = false;
         }
 
         if (fabs(coefficients[i]) != 1.0 || i == 0)
-            cout << fabs(coefficients[i]);
+            fout << fabs(coefficients[i]);
 
         if (i > 0)
-            cout << "x";
+            fout << "x";
         if (i > 1)
-            cout << "^" << i;
+            fout << "^" << i;
     }
-    cout << " = 0" << endl;
+    fout << " = 0" << endl;
 
-    cout << "Enter the interval to find roots(interval_start,interval_end): ";
     int interval_start, interval_end;
-    cin >> interval_start >> interval_end;
+    fin >> interval_start >> interval_end;
 
-    cout << "Enter interval step: ";
     double step;
-    cin >> step;
+    fin >> step;
 
-    cout << "Enter tolerance: ";
     double tolerance;
-    cin >> tolerance;
+    fin >> tolerance;
 
     vector<pair<double, double>> intervals;
     for (double i = interval_start; i < interval_end; i += step)
@@ -75,10 +74,10 @@ int main()
         }
     }
 
-    cout << "\nIntervals containing roots: ";
+    fout << "\nIntervals containing roots: ";
     for (auto a : intervals)
-        cout << "{" << a.first << "," << a.second << "} ";
-    cout << endl;
+        fout << "{" << a.first << "," << a.second << "} ";
+    fout << endl;
 
     vector<double> roots;
     for (auto it = intervals.begin(); it != intervals.end(); it++)
@@ -110,7 +109,9 @@ int main()
     }
 
     for (size_t r = 0; r < roots.size(); r++)
-        cout << "Root " << (r + 1) << " = " << fixed << setprecision(6) << roots[r] << endl;
+        fout << "Root " << (r + 1) << " = " << fixed << setprecision(6) << roots[r] << endl;
 
+    fin.close();
+    fout.close();
     return 0;
 }
