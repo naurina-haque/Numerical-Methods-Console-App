@@ -6,4 +6,5 @@ This repository features a collection of programs designed to solve numerical pr
 - Sample input and output files
 
   **Collaborators:**
-  1. Naurina Haque [@naurinahaque](https://github.com/naurina-haque) 
+  1. Naurina Haque (Github: [naurina-haque](https://github.com/naurina-haque))
+  2. Nashita Binte Hamid (Github: [N-nashita](https://github.com/N-nashita))
