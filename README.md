@@ -8,3 +8,29 @@ This repository features a collection of programs designed to solve numerical pr
 **Collaborators:**
 1. Naurina Haque (Github: [naurina-haque](https://github.com/naurina-haque))
 2. Nashita Binte Hamid (Github: [N-nashita](https://github.com/N-nashita))
+
+## Table of Contents
+
+## Project Structure
+
+
+## Usage
+
+## Theory Section
+### Solution of Non Linear Equations
+#### Bi-Section Method
+
+
+#### False Position Method
+
+
+#### Newton Raphson Method
+
+
+#### Secant Method
+
+
+
+
+
+
