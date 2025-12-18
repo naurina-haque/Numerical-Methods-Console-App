@@ -94,7 +94,7 @@ int main()
             if (fabs(f2 - f1) < 1e-14)
                 break;
 
-            x0 = (x1 * f2 - x2 * f1) / (f2 - f1);
+            x0 = x2 - f2 * (x2 - x1) / (f2 - f1);
             double f0 = func(n, coefficients, x0);
 
             if (fabs(f0) < tolerance)

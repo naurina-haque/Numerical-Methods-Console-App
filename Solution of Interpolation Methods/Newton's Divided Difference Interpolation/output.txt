@@ -1,0 +1,16 @@
+=== Newton's Divided Difference Interpolation Method ===
+=======================================================
+Number of data points: 3
+Value to interpolate: x = 2
+
+    1.00    0.00    0.46   -0.05
+    4.00    1.39    0.20
+    6.00    1.79
+Interpolated value at x = 2.00 is y = 0.57
+
+=== Error calculation ===
+Extra data point: x = 5.00
+Actual value: f(5.00) = 1.61
+Interpolated value: f(5.00) = 1.64
+Absolute Error: 0.03
+Relative Error: 1.95%

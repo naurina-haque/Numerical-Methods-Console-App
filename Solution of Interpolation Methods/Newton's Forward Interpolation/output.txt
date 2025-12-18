@@ -1,0 +1,10 @@
+=== Newton's forward interpolation method ===
+Number of data points: 4
+Value to interpolate: x = 4
+
+    3.00  180.00  -30.00    0.00    0.00
+    5.00  150.00  -30.00    0.00
+    7.00  120.00  -30.00
+    9.00   90.00
+
+Interpolated value at x = 4.00 is y = 165.00

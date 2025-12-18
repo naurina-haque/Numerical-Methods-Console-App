@@ -1,0 +1,12 @@
+=== Newton's backward interpolation method ===
+Number of data points: 5
+Value to interpolate: x = 33
+
+Backward Difference Table:
+   24.00   28.06
+   28.00   30.19    2.13
+   32.00   32.75    2.56    0.43
+   36.00   34.94    2.19   -0.37   -0.80
+   40.00   40.00    5.06    2.87    3.24    4.04
+
+Interpolated value at x = 33.00 is y = 33.27
