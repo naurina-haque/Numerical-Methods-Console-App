@@ -1,0 +1,4 @@
+f(x)=1x^5+4x^4+1
+Simpson's 3/8th Result: 5111.52435
+Exact Integral: 5109.16667
+Relative Error: 0.00046

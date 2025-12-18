@@ -4,126 +4,129 @@ using namespace std;
 
 int main()
 {
-    int t=1;
-    while(t)
+    ifstream fin("input.txt");
+    if(!fin)
     {
-        int n;
-        cout<<"Enter number of Equations: ";
-        cin>>n;
-        cout<<"Enter the augmented matrix:"<<endl;
-        vector<vector<double>>a(n,vector<double>(n+1));
-        for(int i=0; i<n; i++)
-        {
-            for(int j=0; j<n+1; j++)
-                cin>>a[i][j];
-        }
+        cout<<"Input file not found"<<endl;
+        return 0;
+    }
 
-        for(int i=0; i<n; i++)
-        {
-            if(fabs(a[i][i])<1e-6)
-            {
-                bool swapped=false;
-                for(int j=i+1; j<n; j++)
-                {
-                    if(fabs(a[j][i])>1e-6)
-                    {
-                        swap(a[i],a[j]);
-                        swapped=true;
-                        break;
-                    }
-                }
-                if(!swapped)
-                {
-                    cout<<"Matrix is singular"<<endl;
-                    break;
-                }
-            }
+    ofstream fout("output.txt",ios::app);
+    if(!fout)
+    {
+        cout<<"Output file not found"<<endl;
+        return 0;
+    }
 
+
+    int n;
+    if(!(fin>>n))
+    {
+        cout<<"End of file"<<endl;
+        return 0;
+    }
+
+    vector<vector<double>>a(n,vector<double>(n+1));
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n+1; j++)
+            fin>>a[i][j];
+    }
+
+
+    for(int i=0; i<n; i++)
+    {
+        if(fabs(a[i][i])<1e-6)
+        {
+            bool swapped=false;
             for(int j=i+1; j<n; j++)
             {
-                double f=a[j][i]/a[i][i];
-                for(int k=i; k<n+1; k++)
+                if(fabs(a[j][i])>1e-6)
                 {
-                    a[j][k]=a[j][k]-a[i][k]*f;
-                }
-            }
-
-        }
-         cout<<"Upper Triangular Matrix:"<<endl;
-        for(int i=0; i<n; i++)
-            {
-                for(int j=0; j<n+1; j++)
-                    if(fabs(a[i][j])<1e-6)
-                        cout<<"0"<<" ";
-                    else
-                        cout<<setprecision(3)<<a[i][j]<<" ";
-                cout<<endl;
-            }
-
-        bool allzero;
-        int x=1;
-        for(int i=0; i<n; i++)
-        {
-            allzero=true;
-            for(int j=0; j<n; j++)
-            {
-                if(fabs(a[i][j])>1e-6)
-                {
-                    allzero=false;
+                    swap(a[i],a[j]);
+                    swapped=true;
                     break;
                 }
             }
-            if(allzero && fabs(a[i][n])>1e-6)
+            if(!swapped)
             {
-                cout<<"No solution"<<endl;
-                x=0;
-                break;
-            }
-            else if(allzero && fabs(a[i][n])<1e-6)
-            {
-                cout<<"Infinite solution"<<endl;
-                x=0;
                 break;
             }
         }
-        if(x==0)
-        {
-            cout<<"Solve another system?(y/n)"<<endl;
-            char a;
-            cin>>a;
-            if(a=='y')
-                t=1;
-            else
-                t=0;
-        }
 
-        else
+        for(int j=i+1; j<n; j++)
         {
-            vector<double>x(n);
-            double sum;
-           for(int i=n-1;i>=0;i--)
-           {
-               sum=a[i][n];
-               for(int j=i+1;j<n;j++)
-               {
-                   sum-=a[i][j]*x[j];
-               }
-               x[i]=sum/a[i][i];
-           }
-            cout<<endl;
-            for(int i=0;i<n;i++)
+            double f=a[j][i]/a[i][i];
+            for(int k=i; k<n+1; k++)
             {
-                cout<<"x"<<i+1<<"= "<<x[i]<<endl;
+                a[j][k]=a[j][k]-a[i][k]*f;
             }
-
-            cout<<"Solve another system?(y/n)"<<endl;
-            char a;
-            cin>>a;
-            if(a=='y')
-                t=1;
-            else
-                t=0;
         }
+
+    }
+    fout<<"Upper Triangular Matrix:"<<endl;
+
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n+1; j++)
+            if(fabs(a[i][j])<1e-6)
+                fout<<"0"<<" ";
+            else
+                fout<<setprecision(3)<<a[i][j]<<" ";
+        fout<<endl;
+    }
+
+    bool allzero;
+    int x=1;
+    for(int i=0; i<n; i++)
+    {
+        allzero=true;
+        for(int j=0; j<n; j++)
+        {
+            if(fabs(a[i][j])>1e-6)
+            {
+                allzero=false;
+                break;
+            }
+        }
+        if(allzero && fabs(a[i][n])>1e-6)
+        {
+            fout<<"No solution"<<endl;
+            x=0;
+            break;
+        }
+        else if(allzero && fabs(a[i][n])<1e-6)
+        {
+            fout<<"Infinite solution"<<endl;
+            x=0;
+            break;
+        }
+    }
+
+    if(x==0)
+    {
+        return 0;
+    }
+
+    else
+    {
+        vector<double>x(n);
+        double sum;
+        for(int i=n-1; i>=0; i--)
+        {
+            sum=a[i][n];
+            for(int j=i+1; j<n; j++)
+            {
+                sum-=a[i][j]*x[j];
+            }
+            x[i]=sum/a[i][i];
+        }
+
+        for(int i=0; i<n; i++)
+        {
+            fout<<"x"<<i+1<<"= "<<x[i]<<endl;
+        }
+        fout<<endl;
 
     }
 

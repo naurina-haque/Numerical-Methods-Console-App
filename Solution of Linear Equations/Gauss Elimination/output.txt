@@ -1,28 +1,13 @@
 Upper Triangular Matrix:
-2 1 -1 3 2 9
-0 2.5 2.5 -2.5 0 3.5
-0 0 5 -3 -5 5.8
-0 0 0 1.4 3 3.36
-0 0 0 0 1.86 2.2
-
+2 1 -1 3 2 9 
+0 2.5 2.5 -2.5 0 3.5 
+0 0 5 -3 -5 5.8 
+0 0 0 1.4 3 3.36 
+0 0 0 0 1.86 2.2 
 x1= 5.15
 x2= -1
 x3= 2.26
 x4= -0.138
 x5= 1.18
-Solve another system?(y/n)
 
-Matrix is singular
-Upper Triangular Matrix:
-1 1 2
-0 0 0
-Infinite solution
-Solve another system?(y/n)
-
-Matrix is singular
-Upper Triangular Matrix:
-1 1 2
-0 0 1
-No solution
-Solve another system?(y/n)
 

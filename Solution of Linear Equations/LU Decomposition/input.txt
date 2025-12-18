@@ -1,20 +1,6 @@
-Enter number of eqn: 3
-Enter augmented Matrix:
+3
 2 3 -1 5
 4 1 2 6
 -2 5 3 12
-y
-
-Enter number of eqn: 2
-Enter augmented Matrix:
-1 1 2
-2 2 4
-y
-
-Enter number of eqn: 2
-Enter augmented Matrix:
-1 1 2
-2 2 5
-n
 
 
