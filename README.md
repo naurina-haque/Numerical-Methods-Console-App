@@ -16,18 +16,17 @@ This repository features a collection of programs designed to solve numerical pr
 
 ## Usage
 
-## Theory Section
-### Solution of Non Linear Equations
-#### Bi-Section Method
+## Solution of Non Linear Equations
+### Bi-Section Method
 
 
-#### False Position Method
+### False Position Method
 
 
-#### Newton Raphson Method
+### Newton Raphson Method
 
 
-#### Secant Method
+### Secant Method
 
 
 
