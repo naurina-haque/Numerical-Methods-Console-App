@@ -1506,8 +1506,8 @@ xₙ  yₙ
 ```
 Explanation:
 
--`n` → total number of data points
--`xᵢ yᵢ` → coordinates of each data point, for i = 0 to n-1
+- `n` → total number of data points
+- `xᵢ yᵢ` → coordinates of each data point, for i = 0 to n-1
 
 **Example:**
 ```
@@ -1528,8 +1528,8 @@ y = a + b x
 ```
 Explanation:
 
- -`a` → intercept of the regression line  
- -`b` → slope of the regression line
+ - `a` → intercept of the regression line  
+ - `b` → slope of the regression line
 
 **Example:**
 ```
@@ -1595,8 +1595,8 @@ xₙ  yₙ
 ```
 Explanation:
 
--`n` → total number of data points
--`xᵢ yᵢ` → coordinates of each data point, for i = 0 to n-1
+- `n` → total number of data points
+- `xᵢ yᵢ` → coordinates of each data point, for i = 0 to n-1
 
 **Example:**
 ```
@@ -1620,8 +1620,8 @@ y = a * x^b
 ```
 Explanation:
 
- -`a` → base coefficient  
- -`b` → exponent coefficient 
+ - `a` → base coefficient  
+ - `b` → exponent coefficient 
 
 **Example:**
 
@@ -1683,9 +1683,9 @@ xₙ  yₙ
 ```
 Explanation:
 
--`n` → total number of data points
--`d` → degree of the polynomial
--`xᵢ yᵢ` → coordinates of each data point, for i = 0 to n-1
+- `n` → total number of data points
+- `d` → degree of the polynomial
+- `xᵢ yᵢ` → coordinates of each data point, for i = 0 to n-1
 
 **Example:**
 
