@@ -88,16 +88,16 @@ This repository features a collection of programs designed to solve numerical pr
      
 - [Solution of Numerical Integration](#solution-of-numerical-integration)
   
-  - [Simpson's 1/3rd rule](#simpson's-1/3rd-rule)
-      - [Theory](#simpson's-1/3rd-theory)
-      - [Code](#simpson's-1/3rd-code)
-      - [Input](#simpson's-1/3rd-input)
-      - [Output](#simpson's-1/3rd-output)
-  - [Simpson's 3/8th rule](#simpson's-3/8th-rule)
-      - [Theory](#simpson's-3/8th-theory)
-      - [Code](#simpson's-3/8th-code)
-      - [Input](#simpson's-3/8th-input)
-      - [Output](#simpson's-3/8th-output)
+  - [Simpson's 1/3rd Rule](#simpsons-13rd-rule)
+      - [Theory](#simpsons-13rd-theory)
+      - [Code](#simpsons-13rd-code)
+      - [Input](#simpsons-13rd-input)
+      - [Output](#simpsons-13rd-output)
+  - [Simpson's 3/8th Rule](#simpsons-38th-rule)
+      - [Theory](#simpsons-38th-theory)
+      - [Code](#simpsons-38th-code)
+      - [Input](#simpsons-38th-input)
+      - [Output](#simpsons-38th-output)
      
 - [Regression Methods](#regression-methods)
   
@@ -869,7 +869,55 @@ x3 = <value>
 #### Simpson's 3/8th Output
 
 [↑ Back to Table of Contents](#table-of-contents)
+
 ---
+
+## Regression Methods
+
+### Linear Regression
+
+#### Linear Regression Theory
+
+#### Linear Regression Code
+
+#### Linear Regression Input
+
+#### Linear Regression Output
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+---
+
+### Exponential Regression
+
+#### Exponential Regression Theory
+
+#### Exponential Regression Code
+
+#### Exponential Regression Input
+
+#### Exponential Regression Output
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+---
+
+### Polynomial Regression
+
+#### Polynomial Regression Theory
+
+#### Polynomial Regression Code
+
+#### Polynomial Regression Input
+
+#### Polynomial Regression Output
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+---
+
+
+
 
 
 
