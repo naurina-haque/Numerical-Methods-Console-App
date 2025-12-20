@@ -117,7 +117,7 @@ This repository features a collection of programs designed to solve numerical pr
       - [Input](#polynomial-regression-input)
       - [Output](#polynomial-regression-output)
       
-- [Solution of Ordinary Differentiatial Equations](#solution-of-ordinary-differentiatial-equations)
+- [Solution of Ordinary Differential Equations](#solution-of-ordinary-differential-equations)
 
   - [Runge-Kutta Method](#runge-kutta-method)
     - [Theory](#runge-kutta-theory)
