@@ -743,12 +743,118 @@ First derivative at x = <value> is <result>
 ### Gauss Elimination Method
 
 #### Gauss Elimination Theory
+ 
+The Gauss elimination method is a systematic technique for solving a system of linear equations. It reduces the system to an **upper triangular form** using the **forward elimination** approach and then finds the values of unknowns using **back substitution**. The method consists of two main phases:
+
+1. **Forward elimination phase:**  
+   Manipulates the equations to eliminate some unknowns and produce an upper triangular system.
+
+2. **Back substitution phase:**  
+   Solves the equations starting from the last equation of the upper triangular system.
+
+**Algorithm:**
+
+1. Form the augmented matrix of the given system of linear equations.  
+2. Arrange the equations so that the coefficient of the first unknown in the first equation is non-zero. If necessary, interchange equations.  
+3. If no such row exists, the system is singular.  
+4. Divide the first equation by this coefficient to make the coefficient of the first unknown equal to one.  
+5. Using the first equation, eliminate the first unknown from all other equations.  
+6. Repeat the above process for the second, third, and subsequent unknowns until the system is reduced to an upper triangular form.  
+7. **Solution type check:**  
+   - If at any stage a row has all zero coefficients but a non-zero constant term, the system has **no solution**.  
+   - If at least one row has all zero coefficients and a zero constant term, the system has **infinitely many solutions**.  
+   - Otherwise, the system has a **unique solution**.  
+8. If a unique solution exists, solve the last equation to obtain the last unknown.  
+9. Use **back substitution** to find the remaining unknowns.
+
+**Advantages:**  
+- Systematic and straightforward for small to medium systems  
+- Can determine if a system has a unique solution, no solution, or infinitely many solutions  
+- Works well for hand calculations and can be implemented in a program  
+- Useful as a basis for more advanced methods like LU decomposition  
+
+**Disadvantages:**  
+- Computationally expensive for very large systems  
+- Sensitive to rounding errors, which can lead to inaccurate results  
+- Not efficient for sparse matrices without modifications  
+- Pivoting may be necessary to avoid division by very small numbers
+
 
 #### Gauss Elimination Code
 
+**Code Link:** [Gauss Elimination.cpp](https://github.com/naurina-haque/Numerical-Methods-Console-App/blob/main/Solution%20of%20Linear%20Equations/Gauss%20Elimination/Gauss%20Elimination.cpp)
+
 #### Gauss Elimination Input
 
+**Input Format:**
+
+```
+n
+a₁₁ a₁₂ a₁₃ … a₁ₙ b₁
+a₂₁ a₂₂ a₂₃ … a₂ₙ b₂
+…
+aₙ₁ aₙ₂ aₙ₃ … aₙₙ bₙ
+
+```
+**Explanation:**
+
+n = number of equations  
+
+aᵢⱼ = coefficients of the system
+
+bᵢ = constant term in the i-th equation
+
+**Example:**
+```
+3
+2 3 -1 5
+4 1 2 6
+-2 5 3 12
+
+```
+
 #### Gauss Elimination Output
+
+
+**Output Format:**
+
+```
+---Gauss Elimination Method---
+Upper Triangular Matrix:
+u₁₁ u₁₂ u₁₃ … u₁ₙ b₁
+0   u₂₂ u₂₃ … u₂ₙ b₂
+0   0   u₃₃ … u₃ₙ b₃
+…   …   …       … …
+0   0   0   … uₙₙ bₙ
+
+Solution Vector :
+x₁   
+x₂   
+x₃   
+…  
+xₙ 
+
+```
+
+**Example:**
+```
+---Gauss Elimination Method---
+Upper Triangular Matrix:
+2 1 -1 3 2 9 
+0 2.5 2.5 -2.5 0 3.5 
+0 0 5 -3 -5 5.8 
+0 0 0 1.4 3 3.36 
+0 0 0 0 1.86 2.2 
+x1= 5.15
+x2= -1
+x3= 2.26
+x4= -0.138
+x5= 1.18
+
+```
+
+
+
 
 [↑ Back to Table of Contents](#table-of-contents)
 
@@ -758,11 +864,129 @@ First derivative at x = <value> is <result>
 
 #### Gauss Jordan Theory
 
+# Gauss-Jordan Method
+
+**Theory:**  
+The Gauss-Jordan method is a popular technique for solving a system of linear equations. Unlike Gauss elimination, which eliminates variables only from rows below the pivot, the Gauss-Jordan method eliminates variables from **all other rows** (both above and below the pivot). This results in a **diagonal (identity) matrix** for the coefficient part of the augmented matrix.  
+All rows are then normalized by dividing by their pivot elements. The method requires approximately **50% more arithmetic operations** than Gauss elimination, which is why it is less commonly used for large systems.
+
+**Algorithm:**
+
+    1. Form the augmented matrix of the given system of linear equations.  
+    2. Choose the first pivot element.  
+    3. If the pivot is zero, interchange the row with a lower row having a non-zero element in the same column.  
+    4. If no such row exists, the system is singular.  
+    5. Normalize the pivot row by dividing the entire row by the pivot element, so that the pivot becomes 1.  
+    6. Using the normalized pivot row, eliminate the corresponding variable from all other rows (both above and below the pivot).  
+    7. Move to the next pivot position and repeat Steps 2–6 until the coefficient matrix becomes a diagonal (identity) matrix.  
+    8. Solution type check:  
+       - If a row has all zero coefficients but a non-zero constant, the system has no solution.  
+       - If a row has all zero coefficients and a zero constant, the system has infinitely many solutions.  
+       - Otherwise, the system has a unique solution.  
+    9. If a unique solution exists, the right-hand column of the final augmented matrix gives the solution vector directly.
+
+**Advantages:**  
+- Produces the solution vector directly without back substitution  
+- Can determine if a system has a unique solution, no solution, or infinitely many solutions  
+- Systematic and straightforward for small to medium systems  
+- Works well as a conceptual or educational tool  
+
+**Disadvantages:**  
+- Requires more arithmetic operations than Gauss elimination (~50% more)  
+- Sensitive to rounding errors, which can affect accuracy  
+- Less efficient for large systems  
+- Pivoting may be necessary to avoid division by very small numbers
+
+
 #### Gauss Jordan Code
+
+**Code Link:** [Gauss Jordan elimination.cpp](https://github.com/naurina-haque/Numerical-Methods-Console-App/blob/main/Solution%20of%20Linear%20Equations/Gauss%20Jordan%20Elimination/Gauss%20Jordan%20elimination.cpp)
 
 #### Gauss Jordan Input
 
+**Input Format:**
+
+```
+n
+a₁₁ a₁₂ a₁₃ … a₁ₙ b₁
+a₂₁ a₂₂ a₂₃ … a₂ₙ b₂
+…
+aₙ₁ aₙ₂ aₙ₃ … aₙₙ bₙ
+
+```
+**Explanation:**
+
+n = number of equations  
+
+aᵢⱼ = coefficients of the system
+
+bᵢ = constant term in the i-th equation
+
+**Example:**
+```
+3
+2 3 -1 5
+4 1 2 6
+-2 5 3 12
+
+```
+
+
 #### Gauss Jordan Output
+
+**Output Format:**
+
+```
+---Gauss-Jordan Method---
+Upper Triangular Matrix:
+u₁₁ u₁₂ u₁₃ … u₁ₙ b₁
+0   u₂₂ u₂₃ … u₂ₙ b₂
+0   0   u₃₃ … u₃ₙ b₃
+…   …   …       … …
+0   0   0   … uₙₙ bₙ
+
+Row-Reduced Echelon Form:
+1 0 0 … 0 b₁
+0 1 0 … 0 b₂
+0 0 1 … 0 b₃
+… … …     … …
+0 0 0 … 1 bₙ
+
+Solution Vector :
+x₁ = b₁  
+x₂ = b₂  
+x₃ = b₃  
+…  
+xₙ = bₙ
+
+```
+
+**Example:**
+
+```
+---Gauss Jordan Method---
+Upper Triangular Matrix:
+2 1 -1 3 2 9 
+0 2.5 2.5 -2.5 0 3.5 
+0 0 5 -3 -5 5.8 
+0 0 0 1.4 3 3.36 
+0 0 0 0 1.86 2.2 
+
+Row Reduced Echelon form:
+1 0 0 0 0 5.15 
+0 1 0 0 0 -1 
+0 0 1 0 0 2.26 
+0 0 0 1 0 -0.138 
+0 0 0 0 1 1.18 
+
+x1= 5.15
+x2= -1
+x3= 2.26
+x4= -0.138
+x5= 1.18
+
+```
+
 
 [↑ Back to Table of Contents](#table-of-contents)
 
@@ -772,11 +996,124 @@ First derivative at x = <value> is <result>
 
 #### LU Decomposition Theory
 
+*Also Known As:*  
+- LU Factorization Method  
+- Crout’s Method  
+- Cholesky Method  
+- Do little’s Method  
+
+In LU decomposition, **L** is a lower triangular matrix and **U** is an upper triangular matrix, such that **A = LU**.
+
+**Algorithm:** 
+
+    1. Initialize L as an identity matrix and U as a copy of the given matrix A.  
+    2. For each pivot element, eliminate the elements below it in U by computing multipliers and storing them in L.  
+    3. Use each multiplier to subtract a suitable multiple of the pivot row from the rows below so that the elements under the pivot become zero.  
+    4. If any pivot becomes zero and cannot be swapped, the matrix is singular.  
+    5. After decomposition, U is upper triangular, L is lower triangular with 1s on the diagonal, and A = LU.  
+    6. To solve AX = B, solve LY = B by forward substitution.  
+    7. Solve UX = Y by back substitution to obtain the solution vector.
+
+**Advantages:**  
+- Reduces computational effort when solving multiple systems with the same coefficient matrix but different right-hand sides.  
+- Systematic and easy to implement for small to medium matrices.  
+- Helps in understanding matrix factorization and is foundational for advanced methods.  
+- Works efficiently for large, well-conditioned matrices.  
+
+**Disadvantages:**  
+- Requires pivoting in many cases to avoid division by zero or small numbers (numerical instability).  
+- Not suitable for singular or nearly singular matrices.  
+- Slightly more complex to implement than simple Gauss elimination.  
+- Less efficient if only a single system needs to be solved (compared to Gauss elimination).
+
+
 #### LU Decomposition Code
+
+
+**Code Link:** [LU Decomposition.cpp](https://github.com/naurina-haque/Numerical-Methods-Console-App/blob/main/Solution%20of%20Linear%20Equations/LU%20Decomposition/LU%20Decomposition.cpp)
 
 #### LU Decomposition Input
 
+**Input Format:**
+
+```
+n
+a₁₁ a₁₂ a₁₃ … a₁ₙ b₁
+a₂₁ a₂₂ a₂₃ … a₂ₙ b₂
+…
+aₙ₁ aₙ₂ aₙ₃ … aₙₙ bₙ
+
+```
+**Explanation:**
+
+n = number of equations  
+
+aᵢⱼ = coefficients of the system
+
+bᵢ = constant term in the i-th equation
+
+**Example:**
+```
+3
+2 3 -1 5
+4 1 2 6
+-2 5 3 12
+
+```
+
+
 #### LU Decomposition Output
+
+**Output Format:**
+
+```
+---LU Decomposition Method---
+
+Lower Triangular Matrix:
+l₁₁ l₁₂ l₁₃ …
+l₂₁ l₂₂ l₂₃ …
+…
+lₙ₁ lₙ₂ lₙ₃ …
+
+Upper Triangular Matrix:
+u₁₁ u₁₂ u₁₃ …
+u₂₁ u₂₂ u₂₃ …
+…
+uₙ₁ uₙ₂ uₙ₃ …
+
+System has Unique Solution
+
+Value of Y :
+y₁ y₂ y₃ … yₙ
+
+Value of X :
+x₁ x₂ x₃ … xₙ
+
+```
+**Example:**
+
+```
+---LU Decomposition Method---
+
+Lower Triangular Matrix (L):
+1 0 0
+2 1 0
+-1 -1.6 1
+
+Upper Triangular Matrix (U):
+2 3 -1
+0 -5 4
+0 0 8.4
+
+System has Unique Solution
+
+Value of Y:
+y₁=5 y₂=-4 y₃=10.6
+
+Value of X:
+x₁=0.417 x₂=1.81 x₃=1.26
+
+```
 
 [↑ Back to Table of Contents](#table-of-contents)
 
@@ -852,11 +1189,90 @@ x3 = <value>
 
 #### Simpson's 1/3rd Theory
 
+Newton–Cotes methods are a family of numerical integration formulas based on replacing a function with a polynomial that passes through evenly spaced points. Polynomials are used because they are simple to integrate. There are two types of Newton–Cotes formulas:  
+
+- **Closed form:** endpoints included (used for definite integrals)  
+- **Open form:** endpoints not included (rarely used for definite integrals)  
+
+Simpson’s 1/3rd Rule is a **Closed Newton-Cotes formula**. It uses **3 equally spaced points** and approximates the curve with a **second-degree (quadratic) polynomial**. The formula works best when the function is smooth, and the interval count is even.
+
+**Formula:**  
+
+    ∫ₐᵇ y dx = h/3 [ (y₀ + yₙ) + 4(y₁ + y₃ + y₅ + … + yₙ₋₁) + 2(y₂ + y₄ + y₆ + … + yₙ₋₂) ]
+
+Where:
+
+    - a = lower limit  
+    - b = upper limit  
+    - n = number of equal parts (**even**)  
+    - h = (b-a)/n = interval width  
+    - yᵢ = f(xᵢ)  
+
+**Algorithm:**  
+
+    1. Divide the interval [a,b] into an **even number** of subintervals n, each of width h = (b-a)/n.  
+    2. Calculate the values of the function at equally spaced points:  
+                x₀ = a,  x₁ = a+h,  x₂ = a+2h, …, xₙ = b  
+    3. Apply Simpson’s 1/3 formula:  
+               ∫ₐᵇ y dx = h/3 [(y₀ + yₙ) + 4(y₁ + y₃ + y₅ + … + yₙ₋₁) + 2(y₂ + y₄ + y₆ + … + yₙ₋₂) ]  
+    4. Compute the summation and obtain the approximate value of the integral.
+
+**Advantages:**  
+- Gives higher accuracy than the Trapezoidal rule  
+- Exact for all polynomials up to degree two  
+- Simple to apply when data points are equally spaced  
+- Widely used in engineering and scientific computations
+
+**Disadvantages:**  
+- Requires an **even number** of subintervals  
+- Cannot be applied if data points are unequally spaced  
+- Less accurate for functions with **sharp curvature or discontinuities**  
+- More computational effort compared to the Trapezoidal rule
+
+
 #### Simpson's 1/3rd Code
+
+**Code Link:** [Simpson's 1_3rd.cpp](https://github.com/naurina-haque/Numerical-Methods-Console-App/blob/main/Solution%20of%20Numerical%20Integration/Simpson's%201_3%20Rule/Simpson's%201_3rd.cpp)
 
 #### Simpson's 1/3rd Input
 
+
+**Input Format:**
+```
+deg → degree of the polynomial  
+a₍0₎, a₍1₎, …, a₍deg₎` → coefficients from x^deg down to the constant term  
+b → upper limit of integration  
+a → lower limit of integration  
+n → number of subintervals (must be even number for Simpson’s 1/3rd Rule)
+```
+
+**Example:**
+```
+5
+1 4 0 0 0 1
+5
+0 
+9
+```
+
 #### Simpson's 1/3rd Output
+
+**Output Format:**
+```
+print the function
+<approx_integral> → value computed using Simpson’s 1/3rd rule  
+<exact_integral> → exact analytical value of the integral  
+<relative_error> → |(Exact - Approx) / Exact|
+```
+
+**Example:**
+```
+f(x)=1x^5+4x^4+1
+Simpson's 1/3 Result: 5109.85417
+Exact Integral: 5109.16667
+Relative Error: 0.00013
+
+```
 
 [↑ Back to Table of Contents](#table-of-contents)
 
@@ -864,13 +1280,88 @@ x3 = <value>
 
 ### Simpson's 3/8th Rule
 
+# Simpson’s 3/8th Rule
+
 #### Simpson's 3/8th Theory
+
+Simpson’s 3/8th Rule is a **Closed Newton-Cotes formula**. It uses **4 equally spaced points** and approximates the curve with a **third-degree (cubic) polynomial**. The formula works best when the function is smooth, and the interval count is a **multiple of 3**.
+
+**Formula:**  
+
+    ∫ₐᵇ y dx = 3h/8 [ (y₀ + yₙ) + 3(y₁ + y₂ + y₄ + y₅ + … + yₙ₋₁) + 2(y₃ + y₆ + y₉ + … + yₙ₋₃) ]
+
+Where:
+
+    - a = lower limit  
+    - b = upper limit  
+    - n = number of equal parts (**multiple of 3**)  
+    - h = (b-a)/n = interval width  
+    - yᵢ = f(xᵢ)  
+
+**Algorithm:** 
+
+    1. Divide the interval [a, b] into **n subintervals**, where n is a multiple of 3, each of width h = (b-a)/n.  
+    2. Calculate the function values at equally spaced points:  
+          x₀ = a,  x₁ = a+h,  x₂ = a+2h, …, xₙ = b  
+    3. Apply Simpson’s 3/8 formula:  
+          ∫ₐᵇ y dx = 3h/8 [ (y₀ + yₙ) + 3(y₁ + y₂ + y₄ + y₅ + … + yₙ₋₁) + 2(y₃ + y₆ + y₉ + … + yₙ₋₃) ]  
+    4. Compute the summation to obtain the approximate value of the integral.
+
+**Advantages:**  
+- More accurate than the Trapezoidal rule for smooth functions  
+- Exact for all polynomials up to **degree three**  
+- Suitable when the number of subintervals is a multiple of 3  
+- Useful for integrating functions with moderate curvature
+
+**Disadvantages:**  
+- Requires the number of subintervals to be a multiple of 3  
+- Cannot be applied if data points are unequally spaced  
+- Slightly more complex and computationally expensive than Simpson’s 1/3 rule  
+- Not efficient for functions with sharp discontinuities
 
 #### Simpson's 3/8th Code
 
+**Code Link:** [Simpson's 3_8th.cpp](https://github.com/naurina-haque/Numerical-Methods-Console-App/blob/main/Solution%20of%20Numerical%20Integration/Simpson's%203_8%20Rule/Simpson's%203_8th.cpp)
+
 #### Simpson's 3/8th Input
 
+**Input Format:**
+```
+deg → degree of the polynomial  
+a₍0₎, a₍1₎, …, a₍deg₎` → coefficients from x^deg down to the constant term  
+b → upper limit of integration  
+a → lower limit of integration  
+n → number of subintervals (must be multiple of 3 for Simpson’s 3/8th Rule)
+```
+
+**Example:**
+```
+5
+1 4 0 0 0 1
+5
+0 
+9
+```
+
 #### Simpson's 3/8th Output
+
+**Output Format:**
+```
+print the function
+<approx_integral> → value computed using Simpson’s 3/8th rule  
+<exact_integral> → exact analytical value of the integral  
+<relative_error> → |(Exact - Approx) / Exact|  
+
+```
+
+**Example:**
+```
+
+f(x)=1x^5+4x^4+1
+Simpson's 3/8th Result: 5111.52435
+Exact Integral: 5109.16667
+Relative Error: 0.00046
+```
 
 [↑ Back to Table of Contents](#table-of-contents)
 
@@ -882,11 +1373,72 @@ x3 = <value>
 
 #### Linear Regression Theory
 
+Linear regression is a statistical method used to model the relationship between a dependent variable `y` and an independent variable `x` by fitting a straight line through the data points. The goal is to find the best-fitting line that minimizes the difference between the actual data points and the predicted values on the line. This line is represented by the equation: 
+
+                    y = a + b*x
+                    
+where `a` is the y-intercept and `b` is the slope of the line. The coefficients `a` and `b` are determined using the **least squares method**, which minimizes the sum of the squares of the vertical distances between the observed values and the line. Linear regression is widely used in data analysis, forecasting, and modeling relationships that are approximately linear. It provides a simple and effective way to predict future values based on existing data.
+
+**Algorithm:**
+
+    1. Read the data points from input.  
+    2. Compute the required summations:  
+                 - Σxᵢ, Σyᵢ, Σxi², Σxᵢ*yᵢ  
+    3. Check if the denominator for calculating `b` is zero. If zero, report an error (cannot compute slope).  
+    4. Compute the slope `b` and intercept `a`:
+                 b = ( n* Σ(xᵢyᵢ) - ΣxᵢΣyᵢ ) / ( n * Σ(xᵢ²) - (Σxᵢ)² )
+                 a = (Σyᵢ - b * Σxᵢ)/n
+    5. Print the regression equation
+    6. Interpolate or predict `y` for a given `x`, if required.
+    
+**Advantages:**  
+- Simple to understand and implement.  
+- Fast computation.  
+- Works well if the relationship is nearly linear.
+
+**Disadvantages:**  
+- Cannot model nonlinear relationships.  
+- Sensitive to outliers.
+      
 #### Linear Regression Code
+
+**Code Link:** [Linear Regression.cpp](https://github.com/naurina-haque/Numerical-Methods-Console-App/blob/main/Regression%20Methods/Linear%20Regression/Linear%20Regression.cpp)
 
 #### Linear Regression Input
 
+
+**Input Format:**
+```
+n → total number of points  
+xᵢ yᵢ → coordinates of each data point 
+```
+
+**Example:**
+```
+5
+1 2
+2 3
+3 5
+4 4
+5 6
+```
+
 #### Linear Regression Output
+
+**Output Format:**
+```
+Linear Regression Equation:
+y = a + b x
+```
+Explanation:
+ -`a` → intercept of the regression line  
+ -`b` → slope of the regression line
+
+**Example:**
+```
+Linear Regression Equation:
+y = 1.300000 + 0.900000x
+```
 
 [↑ Back to Table of Contents](#table-of-contents)
 
@@ -896,11 +1448,80 @@ x3 = <value>
 
 #### Exponential Regression Theory
 
+Exponential regression models data that grows or decays exponentially. The relationship between the dependent variable `y` and independent variable `x` is given by:
+
+             y = a * x^b
+
+where `a` and `b` are constants. This is useful for data that follows a nonlinear trend increasing or decreasing at a variable rate. By taking the natural logarithm of both `x` and `y`, it can be transformed into a linear regression problem:
+
+           ln(y) = ln(a) + b * ln(x)
+
+
+This allows us to compute `ln(a)` and `b` using least squares, then exponentiate to find `a`.
+
+**Algorithm :**
+
+    1. Read the data points `(xᵢ, yᵢ)`.  
+    2. Check that all `xᵢ > 0` and `yᵢ > 0` (required for logarithm).  
+    3. Transform the data: `Xᵢ = ln(xᵢ)`, `Yᵢ = ln(yᵢ)`.  
+    4. Apply linear regression on `(Xᵢ, Yᵢ)` to compute slope `b` and intercept `ln(a)`.  
+    5. Compute `a = e^(intercept)`.  
+    6. Print the regression equation: `y = a * xᵇ`.  
+    7. Predict `y` for a given `x` if needed.
+
+
+**Advantages:**  
+- Can model nonlinear relationships.  
+- Simple transformation reduces it to linear regression.  
+
+**Disadvantages:**  
+- Requires positive `x` and `y` values.  
+- Sensitive to outliers and noise.
+
+
 #### Exponential Regression Code
+
+**Code Link:** [Exponential Regression.cpp](https://github.com/naurina-haque/Numerical-Methods-Console-App/blob/main/Regression%20Methods/Exponential%20Regression/Exponential%20Regression.cpp)
 
 #### Exponential Regression Input
 
+
+**Input Format:**
+```
+n → total number of points  
+xᵢ yᵢ → coordinates of each data point 
+```
+
+**Example:**
+```
+5 
+1 2
+2 3
+3 5
+4 4
+5 6
+
+```
+
 #### Exponential Regression Output
+
+**Output Format:**
+
+```
+Exponential Regression Equation:
+y = a * x^b
+
+```
+Explanation:
+ -`a` → base coefficient  
+ -`b` → exponent coefficient 
+
+**Example:**
+
+```
+Exponential Regression Equation:
+y = 2.017931 * x^0.641022
+```
 
 [↑ Back to Table of Contents](#table-of-contents)
 
@@ -910,11 +1531,76 @@ x3 = <value>
 
 #### Polynomial Regression Theory
 
+Polynomial regression models the relationship between `y` and `x` using a polynomial of degree `n`:
+
+       y = a₀ + a₁x + a₂x² + ... + aₙxⁿ
+
+where `a₀, a₁, ..., aₙ` are coefficients. It is useful for capturing nonlinear trends in data. The coefficients are determined using the **least squares method** by solving a system of normal equations.
+
+**Algorithm :**
+
+    1. Read the data points `(xᵢ, yᵢ)`.  
+    2. Choose the degree `n` of the polynomial.  
+    3. Compute the required summations: Σxᵢ, Σxᵢ², ..., Σxᵢ²ⁿ and Σyᵢ, Σxᵢyᵢ, ..., Σxᵢⁿyᵢ.  
+    4. Set up and solve the normal equations to find coefficients `a₀, a₁, ..., aₙ`.  
+    5. Print the regression equation
+    6. Predict `y` for given `x` values if needed.
+
+**Advantages:**  
+- Can model complex nonlinear relationships.  
+- Flexible and fits data more accurately than linear regression.
+
+**Disadvantages:**  
+- Overfitting if degree `n` is too high.  
+- Computationally more expensive.  
+- Sensitive to outliers.
+
+
 #### Polynomial Regression Code
+
+**Code Link:** [Polynomial Regression.cpp](https://github.com/naurina-haque/Numerical-Methods-Console-App/blob/main/Regression%20Methods/Polynomial%20Regression/Polynomial%20Regression.cpp)
 
 #### Polynomial Regression Input
 
+
+**Input Format:**
+
+```
+
+```
+
+**Example:**
+
+```
+5 2
+1 2
+2 3
+3 5
+4 4
+5 6
+
+```
+
 #### Polynomial Regression Output
+
+**Output Format:**
+
+```
+Polynomial Regression Equation:
+y = c₀ + c₁x + c₂x^2 + … + cₘ*x^m
+
+```
+Explanation:
+
+- `c₀, c₁, …, cₘ` → coefficients of the polynomial
+
+**Example:**
+
+```
+Polynomial Regression Equation:
+y = 0.800000 + 1.328571*x - 0.071429*x^2
+
+``` 
 
 [↑ Back to Table of Contents](#table-of-contents)
 
@@ -925,12 +1611,96 @@ x3 = <value>
 ### Runge-Kutta Method
 
 #### Runge-Kutta Theory
+  
+The Runge-Kutta (RK) method is a family of iterative techniques used to approximate solutions of ordinary differential equations (ODEs). The **4th-order Runge-Kutta method (RK4)** is the most commonly used and provides a good balance between **accuracy** and **computational efficiency**.  
+
+RK4 is an *initial value problem method*, as the values x₀ and y₀ are given. The method computes the value of y at xₙ₊₁ = xₙ + h by taking a weighted average of four slopes:  
+
+- Slope at the beginning of the interval  
+- Two slopes at the midpoint  
+- Slope at the end of the interval  
+
+This weighted averaging improves accuracy significantly compared to **Euler’s** and **RK2** methods.
+
+**Formula:**  
+For a first-order differential equation dy/dx = f(x, y), the solution at xₙ₊₁ = xₙ + h is obtained using:
+
+    - k₁ = h * f(xₙ, yₙ)  
+    - k₂ = h * f(xₙ + h/2, yₙ + k₁/2)  
+    - k₃ = h * f(xₙ + h/2, yₙ + k₂/2)  
+    - k₄ = h * f(xₙ + h, yₙ + k₃)  
+
+Next value of y:  
+
+yₙ₊₁ = yₙ + 1/6 * (k₁ + 2k₂ + 2k₃ + k₄)
+
+**Algorithm:**  
+
+    1. Read the initial values x₀, y₀, step size h, and final value xₙ.  
+    2. Define the differential equation f(x, y).  
+    3. Compute k₁, k₂, k₃, and k₄ using the RK4 formulas.  
+    4. Calculate the next approximation yₙ₊₁.  
+    5. Update x = x + h and repeat until x = xₙ.
+
+**Advantages:**  
+- High accuracy compared to Euler and RK2 methods  
+- Does not require higher-order derivatives  
+- Stable and reliable for many engineering and scientific problems  
+- Simple to implement computationally  
+
+**Disadvantages:**  
+- Requires more computations per step than Euler’s method  
+- Not self-correcting; smaller step size needed for stiff equations  
+- Computationally expensive for very large systems
+
 
 #### Runge-Kutta Code
 
+**Code Link:** [Runge-Kutta.cpp](https://github.com/naurina-haque/Numerical-Methods-Console-App/blob/main/Solution%20of%20Ordinary%20Differential%20Equation/Runge-Kutta%20Method/Runge-Kutta.cpp)
+
 #### Runge-Kutta Input
 
+
+**Input Format:**
+```
+ x₀ → initial x-value  
+ y₀ → initial y-value  
+ h  → step size  
+ xₙ → final x-value
+
+```
+
+**Example:**
+```
+0
+1
+0.1
+0.5
+```
+
 #### Runge-Kutta Output
+
+
+**Output Format:**
+```
+---Runge-Kutta Method---
+x₀ = value₀, y₀ = value₀
+x₁ = value₁, y₁ = value₁
+x₂ = value₂, y₂ = value₂
+...
+xₙ = valueₙ, yₙ = valueₙ
+```
+
+**Example:**
+```
+---Runge-Kutta Method---
+x1 = 0.000000   y1 = 1.000000
+x2 = 0.100000   y2 = 1.115512
+x3 = 0.200000   y3 = 1.264208
+x4 = 0.300000   y4 = 1.449575
+x5 = 0.400000   y5 = 1.675473
+x6 = 0.500000   y6 = 1.946162
+```
 
 [↑ Back to Table of Contents](#table-of-contents)
 
