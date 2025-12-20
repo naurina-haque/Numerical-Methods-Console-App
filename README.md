@@ -12,7 +12,8 @@ This repository features a collection of programs designed to solve numerical pr
 2. Nashita Binte Hamid (Github: [N-nashita](https://github.com/N-nashita))
 
 ## Table of Contents
-
+- [Project Structure](#project-structure)
+- [Usage](#usage)
 - [Solution of Non Linear Equations](#solution-of-non-linear-equations)
 
   - [Bisection Method](#bisection-method)
@@ -64,27 +65,65 @@ This repository features a collection of programs designed to solve numerical pr
 
 - [Solution of Linear Equations](#solution-of-linear-equations)
   
-   - [Gauss Elimination Method](#gauss-elimination-method)
+  - [Gauss Elimination Method](#gauss-elimination-method)
       - [Theory](#gauss-elimination-theory)
       - [Code](#gauss-elimination-code)
       - [Input](#gauss-elimination-input)
       - [Output](#gauss-elimination-output)
-    - [Gauss Jordan Elimination Method](#gauss-jordan-elimination-method)
+  - [Gauss Jordan Elimination Method](#gauss-jordan-elimination-method)
       - [Theory](#gauss-jordan-theory)
       - [Code](#gauss-jordan-code)
       - [Input](#gauss-jordan-input)
       - [Output](#gauss-jordan-output)
-    - [LU Decomposition Method](#lu-decomposition-method)
+  - [LU Decomposition Method](#lu-decomposition-method)
       - [Theory](#lu-decomposition-theory)
       - [Code](#lu-decomposition-code)
       - [Input](#lu-decomposition-input)
       - [Output](#lu-decomposition-output)
-    - [Matrix Inversion](#matrix-inversion)
+  - [Matrix Inversion](#matrix-inversion)
       - [Theory](#matrix-inversion-theory)
       - [Code](#matrix-inversion-code)
       - [Input](#matrix-inversion-input)
       - [Output](#matrix-inversion-output)
+     
+- [Solution of Numerical Integration](#solution-of-numerical-integration)
+  
+  - [Simpson's 1/3rd rule](#simpson's-1/3rd-rule)
+      - [Theory](#simpson's-1/3rd-theory)
+      - [Code](#simpson's-1/3rd-code)
+      - [Input](#simpson's-1/3rd-input)
+      - [Output](#simpson's-1/3rd-output)
+  - [Simpson's 3/8th rule](#simpson's-3/8th-rule)
+      - [Theory](#simpson's-3/8th-theory)
+      - [Code](#simpson's-3/8th-code)
+      - [Input](#simpson's-3/8th-input)
+      - [Output](#simpson's-3/8th-output)
+     
+- [Regression Methods](#regression-methods)
+  
+  - [Linear Regression](#linear-regression)
+      - [Theory](#linear-regression-theory)
+      - [Code](#linear-regression-code)
+      - [Input](#linear-regression-input)
+      - [Output](#linear-regression-output)
+  - [Exponential Regression](#exponential-regression-method)
+      - [Theory](#exponential-regression-theory)
+      - [Code](#exponential-regression-code)
+      - [Input](#exponential-regression-input)
+      - [Output](#exponential-regression-output)
+  - [Exponential Regression](#exponential-regression-method)
+      - [Theory](#exponential-regression-theory)
+      - [Code](#exponential-regression-code)
+      - [Input](#exponential-regression-input)
+      - [Output](#exponential-regression-output)
       
+- [Solution of Ordinary Differentiatial Equations](#solution-of-ordinary-differentiatial-equations)
+
+  - [Runge-Kutta Method](#runge-kutta-method)
+    - [Theory](#runge-kutta-theory)
+    - [Code](#runge-kutta-code)
+    - [Input](#runge-kutta-input)
+    - [Output](#runge-kutta-output)      
 ---
 
 ## Project Structure
@@ -710,6 +749,8 @@ First derivative at x = <value> is <result>
 #### Gauss Elimination Input
 
 #### Gauss Elimination Output
+
+[↑ Back to Table of Contents](#table-of-contents)
 ---
 
 ### Gauss Jordan Elimination Method
@@ -721,6 +762,8 @@ First derivative at x = <value> is <result>
 #### Gauss Jordan Input
 
 #### Gauss Jordan Output
+
+[↑ Back to Table of Contents](#table-of-contents)
 ---
 
 ### LU Decomposition Method
@@ -732,6 +775,8 @@ First derivative at x = <value> is <result>
 #### LU Decomposition Input
 
 #### LU Decomposition Output
+
+[↑ Back to Table of Contents](#table-of-contents)
 ---
 
 
@@ -796,6 +841,36 @@ x3 = <value>
 [↑ Back to Table of Contents](#table-of-contents)
 
 ---
+
+
+## Solution of Numerical Integration
+
+### Simpson's 1/3rd Rule
+
+#### Simpson's 1/3rd Theory
+
+#### Simpson's 1/3rd Code
+
+#### Simpson's 1/3rd Input
+
+#### Simpson's 1/3rd Output
+
+[↑ Back to Table of Contents](#table-of-contents)
+---
+
+### Simpson's 3/8th Rule
+
+#### Simpson's 3/8th Theory
+
+#### Simpson's 3/8th Code
+
+#### Simpson's 3/8th Input
+
+#### Simpson's 3/8th Output
+
+[↑ Back to Table of Contents](#table-of-contents)
+---
+
 
 
 
