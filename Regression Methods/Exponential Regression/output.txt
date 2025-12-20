@@ -1,2 +1,2 @@
-Transcendental Regression Equation:
+Exponential Regression Equation:
 y = 2.017931 * x^0.641022

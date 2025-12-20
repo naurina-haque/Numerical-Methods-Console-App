@@ -1,2 +1,2 @@
 Polynomial Regression Equation:
-y = 4.000000 + -0.300000*x
+y = 0.800000 + 1.328571*x - 0.071429*x^2

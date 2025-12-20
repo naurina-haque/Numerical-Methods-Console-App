@@ -40,14 +40,13 @@ int main() {
 
     vector<vector<double>> A(m+1, vector<double>(m+1,0));
     vector<double> Y(m+1,0);
-
     for(int i=0; i<=m; i++) {
         for(int j=0; j<=m; j++) {
             for(int k=0; k<n; k++)
                 A[i][j] += pow(x[k], i+j);
         }
         for(int k=0; k<n; k++)
-            Y[i] += pow(x[k], i)*y[k];
+            Y[i] += pow(x[k], i) * y[k];
     }
 
     vector<double> coeff = gaussElimination(A, Y, m+1);
@@ -55,11 +54,22 @@ int main() {
     fout << fixed << setprecision(6);
     fout << "Polynomial Regression Equation:\n";
     fout << "y = ";
+
+    bool firstTerm = true;
     for(int i=0; i<=m; i++) {
-        fout << coeff[i];
-        if(i>0) fout << "*x";
-        if(i>1) fout << "^" << i;
-        if(i<m) fout << " + ";
+        if(coeff[i] == 0) continue;
+
+        if(firstTerm) {
+            if(coeff[i] < 0) fout << "-";
+        } else {
+            if(coeff[i] < 0) fout << " - ";
+            else fout << " + ";
+        }
+        fout << abs(coeff[i]);
+        if(i > 0) fout << "*x";
+        if(i > 1) fout << "^" << i;
+
+        firstTerm = false;
     }
     fout << "\n";
 

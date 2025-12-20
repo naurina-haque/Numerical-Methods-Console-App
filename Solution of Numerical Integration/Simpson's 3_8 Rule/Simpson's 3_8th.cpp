@@ -1,4 +1,3 @@
-//Definite integral of a standard polynomial function using Simpson 3/8th
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -56,7 +55,7 @@ int main()
         return 0;
     }
 
-    ofstream fout("output.txt",ios::app);
+    ofstream fout("output.txt");
     if(!fout)
     {
         cout<<"File not found"<<endl;

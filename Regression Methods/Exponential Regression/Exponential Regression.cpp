@@ -29,7 +29,7 @@ int main() {
     double A = exp(lnA);
 
     fout << fixed << setprecision(6);
-    fout << "Transcendental Regression Equation:\n";
+    fout << "Exponential Regression Equation:\n";
     fout << "y = " << A << " * x^" << B << "\n";
 
     fin.close();
