@@ -580,7 +580,7 @@ Newton's Forward Interpolation is a method used to estimate the value of a funct
 
 #### Forward Interpolation Code
 
-**Code Link:** [forward_interpolation.cpp](Solution%20of%20Interpolation%20Methods/Newton's%20Forward%20Interpolation/Newton's%20Forward%20Interpolation/forward_interpolation.cpp)
+**Code Link:** [forward_interpolation.cpp](https://github.com/naurina-haque/Numerical-Methods-Console-App/blob/main/Solution%20of%20Interpolation%20Methods/Newton's%20Forward%20Interpolation/forward_interpolation.cpp)
 
 #### Forward Interpolation Input
 
@@ -845,16 +845,24 @@ The Gauss elimination method is a systematic technique for solving a system of l
 **Algorithm:**
 
     1. Form the augmented matrix of the given system of linear equations.  
-    2. Arrange the equations so that the coefficient of the first unknown in the first equation is non-zero. If necessary, interchange           equations.  
-    3. If no such row exists, the system is singular.  
-    4. Divide the first equation by this coefficient to make the coefficient of the first unknown equal to one.  
+    
+    2. Arrange the equations so that the coefficient of the first unknown in the first equation is non-zero. If necessary, interchange equations.  
+    
+    3. If no such row exists, the system is singular. 
+    
+    4. Divide the first equation by this coefficient to make the coefficient of the first unknown equal to one. 
+    
     5. Using the first equation, eliminate the first unknown from all other equations.  
+    
     6. Repeat the above process for the second, third, and subsequent unknowns until the system is reduced to an upper triangular form.  
+    
     7. Solution type check: 
        - If at any stage a row has all zero coefficients but a non-zero constant term, the system has no solution.  
        - If at least one row has all zero coefficients and a zero constant term, the system has infinitely many solutions.  
        - Otherwise, the system has a unique solution.  
+       
     8. If a unique solution exists, solve the last equation to obtain the last unknown.  
+    
     9. Use back substitution to find the remaining unknowns.
 
 **Advantages:**  
@@ -962,17 +970,25 @@ All rows are then normalized by dividing by their pivot elements. The method req
 
 **Algorithm:**
 
-    1. Form the augmented matrix of the given system of linear equations.  
-    2. Choose the first pivot element.  
-    3. If the pivot is zero, interchange the row with a lower row having a non-zero element in the same column.  
+    1. Form the augmented matrix of the given system of linear equations.
+    
+    2. Choose the first pivot element.   
+    
+    3. If the pivot is zero, interchange the row with a lower row having a non-zero element in the same column. 
+    
     4. If no such row exists, the system is singular.  
+    
     5. Normalize the pivot row by dividing the entire row by the pivot element, so that the pivot becomes 1.  
+    
     6. Using the normalized pivot row, eliminate the corresponding variable from all other rows (both above and below the pivot).  
-    7. Move to the next pivot position and repeat Steps 2–6 until the coefficient matrix becomes a diagonal (identity) matrix.  
+    
+    7. Move to the next pivot position and repeat Steps 2–6 until the coefficient matrix becomes a diagonal (identity) matrix. 
+    
     8. Solution type check:  
        - If a row has all zero coefficients but a non-zero constant, the system has no solution.  
        - If a row has all zero coefficients and a zero constant, the system has infinitely many solutions.  
        - Otherwise, the system has a unique solution.  
+       
     9. If a unique solution exists, the right-hand column of the final augmented matrix gives the solution vector directly.
 
 **Advantages:**  
@@ -1097,12 +1113,19 @@ In LU decomposition, **L** is a lower triangular matrix and **U** is an upper tr
 **Algorithm:** 
 
     1. Initialize L as an identity matrix and U as a copy of the given matrix A.  
-    2. For each pivot element, eliminate the elements below it in U by computing multipliers and storing them in L.  
-    3. Use each multiplier to subtract a suitable multiple of the pivot row from the rows below so that the elements under the pivot become zero.  
+    
+    2. For each pivot element, eliminate the elements below it in U by computing multipliers and storing them in L. 
+    
+    3. Use each multiplier to subtract a suitable multiple of the pivot row from the rows below so that the elements under the pivot become zero. 
+    
     4. If any pivot becomes zero and cannot be swapped, the matrix is singular.  
-    5. After decomposition, U is upper triangular, L is lower triangular with 1s on the diagonal, and A = LU.  
+    
+    5. After decomposition, U is upper triangular, L is lower triangular with 1s on the diagonal, and A = LU. 
+    
     6. To solve AX = B, solve LY = B by forward substitution.  
+    
     7. Solve UX = Y by back substitution to obtain the solution vector.
+  
 
 **Advantages:**  
 - Reduces computational effort when solving multiple systems with the same coefficient matrix but different right-hand sides.  
@@ -1300,11 +1323,14 @@ Where:
 
 **Algorithm:**  
 
-    1. Divide the interval [a,b] into an **even number** of subintervals n, each of width h = (b-a)/n.  
+    1. Divide the interval [a,b] into an even number of subintervals n, each of width h = (b-a)/n. 
+    
     2. Calculate the values of the function at equally spaced points:  
-                x₀ = a,  x₁ = a+h,  x₂ = a+2h, …, xₙ = b  
+                x₀ = a,  x₁ = a+h,  x₂ = a+2h, …, xₙ = b 
+                
     3. Apply Simpson’s 1/3 formula:  
                ∫ₐᵇ y dx = h/3 [(y₀ + yₙ) + 4(y₁ + y₃ + y₅ + … + yₙ₋₁) + 2(y₂ + y₄ + y₆ + … + yₙ₋₂) ]  
+               
     4. Compute the summation and obtain the approximate value of the integral.
 
 **Advantages:**  
@@ -1330,7 +1356,7 @@ Where:
 **Input Format:**
 ```
 deg → degree of the polynomial  
-a₍0₎, a₍1₎, …, a₍deg₎` → coefficients from x^deg down to the constant term  
+a₍0₎, a₍1₎, …, a₍deg₎ → coefficients from x^deg down to the constant term  
 b → upper limit of integration  
 a → lower limit of integration  
 n → number of subintervals (must be even number for Simpson’s 1/3rd Rule)
@@ -1389,10 +1415,13 @@ Where:
 **Algorithm:** 
 
     1. Divide the interval [a, b] into n subintervals, where n is a multiple of 3, each of width h = (b-a)/n.  
+    
     2. Calculate the function values at equally spaced points:  
           x₀ = a,  x₁ = a+h,  x₂ = a+2h, …, xₙ = b  
+          
     3. Apply Simpson’s 3/8 formula:  
           ∫ₐᵇ y dx = 3h/8 [ (y₀ + yₙ) + 3(y₁ + y₂ + y₄ + y₅ + … + yₙ₋₁) + 2(y₃ + y₆ + y₉ + … + yₙ₋₃) ]  
+          
     4. Compute the summation to obtain the approximate value of the integral.
 
 **Advantages:**  
@@ -1416,7 +1445,7 @@ Where:
 **Input Format:**
 ```
 deg → degree of the polynomial  
-a₍0₎, a₍1₎, …, a₍deg₎` → coefficients from x^deg down to the constant term  
+a₍0₎, a₍1₎, …, a₍deg₎ → coefficients from x^deg down to the constant term  
 b → upper limit of integration  
 a → lower limit of integration  
 n → number of subintervals (must be multiple of 3 for Simpson’s 3/8th Rule)
@@ -1470,14 +1499,19 @@ where `a` is the y-intercept and `b` is the slope of the line. The coefficients 
 **Algorithm:**
 
     1. Read the data points from input.  
+    
     2. Compute the required summations:  
-                 - Σxᵢ, Σyᵢ, Σxi², Σxᵢ*yᵢ  
-    3. Check if the denominator for calculating `b` is zero. If zero, report an error (cannot compute slope).  
-    4. Compute the slope `b` and intercept `a`:
-                 b = ( n* Σ(xᵢyᵢ) - ΣxᵢΣyᵢ ) / ( n * Σ(xᵢ²) - (Σxᵢ)² )
-                 a = (Σyᵢ - b * Σxᵢ)/n
+           - Σxᵢ, Σyᵢ, Σxi², Σxᵢ*yᵢ  
+                 
+    3. Check if the denominator for calculating `b` is zero. If zero, report an error (cannot compute slope). 
+    
+    4. Compute the slope `b` and intercept a:
+            - b = ( n* Σ(xᵢyᵢ) - ΣxᵢΣyᵢ ) / ( n * Σ(xᵢ²) - (Σxᵢ)² )
+            - a = (Σyᵢ - b * Σxᵢ)/n
+                 
     5. Print the regression equation
-    6. Interpolate or predict `y` for a given `x`, if required.
+    
+    6. Interpolate or predict y for a given x, if required.
     
 **Advantages:**  
 - Simple to understand and implement.  
@@ -1558,13 +1592,19 @@ This allows us to compute `ln(a)` and `b` using least squares, then exponentiate
 
 **Algorithm :**
 
-    1. Read the data points `(xᵢ, yᵢ)`.  
-    2. Check that all `xᵢ > 0` and `yᵢ > 0` (required for logarithm).  
-    3. Transform the data: `Xᵢ = ln(xᵢ)`, `Yᵢ = ln(yᵢ)`.  
-    4. Apply linear regression on `(Xᵢ, Yᵢ)` to compute slope `b` and intercept `ln(a)`.  
-    5. Compute `a = e^(intercept)`.  
-    6. Print the regression equation: `y = a * xᵇ`.  
-    7. Predict `y` for a given `x` if needed.
+    1. Read the data points (xᵢ, yᵢ).  
+    
+    2. Check that all xᵢ > 0 and yᵢ > 0 (required for logarithm). 
+    
+    3. Transform the data: Xᵢ = ln(xᵢ), Yᵢ = ln(yᵢ).  
+    
+    4. Apply linear regression on (Xᵢ, Yᵢ) to compute slope b and intercept ln(a).  
+    
+    5. Compute a = e^(intercept). 
+    
+    6. Print the regression equation: y = a * xᵇ.
+    
+    7. Predict y for a given x if needed.
 
 
 **Advantages:**  
@@ -1646,12 +1686,12 @@ where `a₀, a₁, ..., aₙ` are coefficients. It is useful for capturing nonli
 
 **Algorithm :**
 
-    1. Read the data points `(xᵢ, yᵢ)`.  
-    2. Choose the degree `n` of the polynomial.  
+    1. Read the data points (xᵢ, yᵢ).  
+    2. Choose the degree n of the polynomial.  
     3. Compute the required summations: Σxᵢ, Σxᵢ², ..., Σxᵢ²ⁿ and Σyᵢ, Σxᵢyᵢ, ..., Σxᵢⁿyᵢ.  
-    4. Set up and solve the normal equations to find coefficients `a₀, a₁, ..., aₙ`.  
+    4. Set up and solve the normal equations to find coefficients a₀, a₁, ..., aₙ.  
     5. Print the regression equation
-    6. Predict `y` for given `x` values if needed.
+    6. Predict y for given x values if needed.
 
 **Advantages:**  
 - Can model complex nonlinear relationships.  
