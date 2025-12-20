@@ -1280,8 +1280,6 @@ Relative Error: 0.00013
 
 ### Simpson's 3/8th Rule
 
-# Simpson’s 3/8th Rule
-
 #### Simpson's 3/8th Theory
 
 Simpson’s 3/8th Rule is a **Closed Newton-Cotes formula**. It uses **4 equally spaced points** and approximates the curve with a **third-degree (cubic) polynomial**. The formula works best when the function is smooth, and the interval count is a **multiple of 3**.
