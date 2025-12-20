@@ -119,11 +119,11 @@ This repository features a collection of programs designed to solve numerical pr
       
 - [Solution of Ordinary Differential Equations](#solution-of-ordinary-differential-equations)
 
-  - [Runge-Kutta Method](#runge-kutta-method)
-    - [Theory](#runge-kutta-theory)
-    - [Code](#runge-kutta-code)
-    - [Input](#runge-kutta-input)
-    - [Output](#runge-kutta-output)      
+  - [Runge-Kutta Method](#rungekutta-method)
+    - [Theory](#rungekutta-theory)
+    - [Code](#rungekutta-code)
+    - [Input](#rungekutta-input)
+    - [Output](#rungekutta-output)      
 ---
 
 ## Project Structure
@@ -751,6 +751,7 @@ First derivative at x = <value> is <result>
 #### Gauss Elimination Output
 
 [↑ Back to Table of Contents](#table-of-contents)
+
 ---
 
 ### Gauss Jordan Elimination Method
@@ -764,6 +765,7 @@ First derivative at x = <value> is <result>
 #### Gauss Jordan Output
 
 [↑ Back to Table of Contents](#table-of-contents)
+
 ---
 
 ### LU Decomposition Method
@@ -777,6 +779,7 @@ First derivative at x = <value> is <result>
 #### LU Decomposition Output
 
 [↑ Back to Table of Contents](#table-of-contents)
+
 ---
 
 
