@@ -844,18 +844,18 @@ The Gauss elimination method is a systematic technique for solving a system of l
 
 **Algorithm:**
 
-1. Form the augmented matrix of the given system of linear equations.  
-2. Arrange the equations so that the coefficient of the first unknown in the first equation is non-zero. If necessary, interchange equations.  
-3. If no such row exists, the system is singular.  
-4. Divide the first equation by this coefficient to make the coefficient of the first unknown equal to one.  
-5. Using the first equation, eliminate the first unknown from all other equations.  
-6. Repeat the above process for the second, third, and subsequent unknowns until the system is reduced to an upper triangular form.  
-7. **Solution type check:**  
-   - If at any stage a row has all zero coefficients but a non-zero constant term, the system has **no solution**.  
-   - If at least one row has all zero coefficients and a zero constant term, the system has **infinitely many solutions**.  
-   - Otherwise, the system has a **unique solution**.  
-8. If a unique solution exists, solve the last equation to obtain the last unknown.  
-9. Use **back substitution** to find the remaining unknowns.
+    1. Form the augmented matrix of the given system of linear equations.  
+    2. Arrange the equations so that the coefficient of the first unknown in the first equation is non-zero. If necessary, interchange           equations.  
+    3. If no such row exists, the system is singular.  
+    4. Divide the first equation by this coefficient to make the coefficient of the first unknown equal to one.  
+    5. Using the first equation, eliminate the first unknown from all other equations.  
+    6. Repeat the above process for the second, third, and subsequent unknowns until the system is reduced to an upper triangular form.  
+    7. Solution type check: 
+       - If at any stage a row has all zero coefficients but a non-zero constant term, the system has no solution.  
+       - If at least one row has all zero coefficients and a zero constant term, the system has infinitely many solutions.  
+       - Otherwise, the system has a unique solution.  
+    8. If a unique solution exists, solve the last equation to obtain the last unknown.  
+    9. Use back substitution to find the remaining unknowns.
 
 **Advantages:**  
 - Systematic and straightforward for small to medium systems  
@@ -1388,7 +1388,7 @@ Where:
 
 **Algorithm:** 
 
-    1. Divide the interval [a, b] into **n subintervals**, where n is a multiple of 3, each of width h = (b-a)/n.  
+    1. Divide the interval [a, b] into n subintervals, where n is a multiple of 3, each of width h = (b-a)/n.  
     2. Calculate the function values at equally spaced points:  
           x₀ = a,  x₁ = a+h,  x₂ = a+2h, …, xₙ = b  
     3. Apply Simpson’s 3/8 formula:  
@@ -1463,7 +1463,7 @@ Relative Error: 0.00046
 
 Linear regression is a statistical method used to model the relationship between a dependent variable `y` and an independent variable `x` by fitting a straight line through the data points. The goal is to find the best-fitting line that minimizes the difference between the actual data points and the predicted values on the line. This line is represented by the equation: 
 
-                    y = a + b*x
+           y = a + b*x
                     
 where `a` is the y-intercept and `b` is the slope of the line. The coefficients `a` and `b` are determined using the **least squares method**, which minimizes the sum of the squares of the vertical distances between the observed values and the line. Linear regression is widely used in data analysis, forecasting, and modeling relationships that are approximately linear. It provides a simple and effective way to predict future values based on existing data.
 
@@ -1497,9 +1497,17 @@ where `a` is the y-intercept and `b` is the slope of the line. The coefficients 
 
 **Input Format:**
 ```
-n → total number of points  
-xᵢ yᵢ → coordinates of each data point 
+n 
+x₁  y₁ 
+x₂  y₂
+x₃  y₃
+…
+xₙ  yₙ
 ```
+Explanation:
+
+-`n` → total number of data points
+-`xᵢ yᵢ` → coordinates of each data point, for i = 0 to n-1
 
 **Example:**
 ```
@@ -1519,6 +1527,7 @@ Linear Regression Equation:
 y = a + b x
 ```
 Explanation:
+
  -`a` → intercept of the regression line  
  -`b` → slope of the regression line
 
@@ -1576,9 +1585,18 @@ This allows us to compute `ln(a)` and `b` using least squares, then exponentiate
 
 **Input Format:**
 ```
-n → total number of points  
-xᵢ yᵢ → coordinates of each data point 
+n  
+x₁  y₁  
+x₂  y₂
+x₃  y₃
+…
+xₙ  yₙ
+
 ```
+Explanation:
+
+-`n` → total number of data points
+-`xᵢ yᵢ` → coordinates of each data point, for i = 0 to n-1
 
 **Example:**
 ```
@@ -1601,6 +1619,7 @@ y = a * x^b
 
 ```
 Explanation:
+
  -`a` → base coefficient  
  -`b` → exponent coefficient 
 
@@ -1654,8 +1673,19 @@ where `a₀, a₁, ..., aₙ` are coefficients. It is useful for capturing nonli
 **Input Format:**
 
 ```
+n  d
+x₁  y₁
+x₂  y₂
+x₃  y₃
+…
+xₙ  yₙ
 
 ```
+Explanation:
+
+-`n` → total number of data points
+-`d` → degree of the polynomial
+-`xᵢ yᵢ` → coordinates of each data point, for i = 0 to n-1
 
 **Example:**
 
