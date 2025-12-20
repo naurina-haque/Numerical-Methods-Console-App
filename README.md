@@ -856,6 +856,7 @@ x3 = <value>
 #### Simpson's 1/3rd Output
 
 [↑ Back to Table of Contents](#table-of-contents)
+
 ---
 
 ### Simpson's 3/8th Rule
@@ -915,6 +916,23 @@ x3 = <value>
 [↑ Back to Table of Contents](#table-of-contents)
 
 ---
+
+## Solution of Ordinary Differential Equations
+
+### Runge-Kutta Method
+
+#### Runge-Kutta Theory
+
+#### Runge-Kutta Code
+
+#### Runge-Kutta Input
+
+#### Runge-Kutta Output
+
+[↑ Back to Table of Contents](#table-of-contents)
+
+---
+
 
 
 
