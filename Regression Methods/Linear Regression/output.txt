@@ -1,0 +1,2 @@
+Linear Regression Equation:
+y = 1.300000 + 0.900000x

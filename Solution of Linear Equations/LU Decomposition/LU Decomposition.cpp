@@ -11,7 +11,7 @@ int main()
         return 0;
     }
 
-    ofstream fout("output.txt",ios::app);
+    ofstream fout("output.txt");
     if(!fout)
     {
         cout<<"Output file not found"<<endl;
@@ -60,8 +60,7 @@ int main()
             }
             if(!swapp)
             {
-                fout<<"Singular Matrix"<<endl;
-                return 0;
+                break;
             }
         }
         else
@@ -79,6 +78,7 @@ int main()
         }
     }
 
+    fout<<"---LU Decomposition Method---"<<endl;
     fout<<"Lower triangular Matrix"<<endl;
     for(int i=0; i<n; i++)
     {
@@ -162,6 +162,9 @@ int main()
         fout<<setprecision(3)<<x[i]<<" ";
     }
     fout<<endl;
+
+    fin.close();
+    fout.close();
 
     return 0;
 }

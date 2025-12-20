@@ -1,0 +1,2 @@
+Polynomial Regression Equation:
+y = 4.000000 + -0.300000*x

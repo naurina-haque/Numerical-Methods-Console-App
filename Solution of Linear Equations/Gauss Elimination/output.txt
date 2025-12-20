@@ -1,3 +1,4 @@
+---Gauss Elimination Method---
 Upper Triangular Matrix:
 2 1 -1 3 2 9 
 0 2.5 2.5 -2.5 0 3.5 
@@ -9,5 +10,4 @@ x2= -1
 x3= 2.26
 x4= -0.138
 x5= 1.18
-
 

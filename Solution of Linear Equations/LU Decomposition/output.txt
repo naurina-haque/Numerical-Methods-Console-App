@@ -1,3 +1,4 @@
+---LU Decomposition Method---
 Lower triangular Matrix
 1 0 0 
 2 1 0 

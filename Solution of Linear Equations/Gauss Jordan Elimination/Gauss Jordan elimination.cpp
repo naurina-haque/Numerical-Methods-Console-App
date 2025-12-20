@@ -11,7 +11,7 @@ int main()
         return 0;
     }
 
-    ofstream fout("output.txt",ios::app);
+    ofstream fout("output.txt");
     if(!fout)
     {
         cout<<"Output file not found"<<endl;
@@ -48,8 +48,8 @@ int main()
             }
             if(!swapped)
             {
-                fout<<"Matrix is singular"<<endl;
-                return 0;
+
+                break;
             }
         }
 
@@ -63,7 +63,7 @@ int main()
         }
 
     }
-
+    fout<<"---Gauss Jordan Method---"<<endl;
     fout<<"Upper Triangular Matrix:"<<endl;
     for(int i=0; i<n; i++)
     {
@@ -149,6 +149,9 @@ int main()
         fout<<"x"<<i+1<<"= "<<a[i][n]<<endl;
     }
     fout<<endl;
+
+    fin.close();
+    fout.close();
 
     return 0;
 }
