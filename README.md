@@ -130,22 +130,114 @@ This repository features a collection of programs designed to solve numerical pr
 
 ```
 Numerical-Methods-Console-App/
-├── Solution of Non Linear Equations/
-│   ├── Bi-section method/
-│   ├── False Position Method/
-│   ├── Newton-Raphson Method/
-│   └── Secant Method/
-├── Solution of Interpolation Methods/
-│   ├── Newton's Forward Interpolation/
-│   ├── Newton's Backward Interpolation/
-│   └── Newton's Divided Difference Interpolation/
-├── Solution of Numerical Differentiation/
-├── Solution of Linear Equations/
-│   ├── LU Decomposition/
-│   └── Matrix Inversion Method/
-├── Solution of Differential Equation/
-├── Solution of Curve Fitting(Regression)/
-└── Solution of Numerical Integration/
+│
+├── Simpson's 3/8 Rule
+│ ├── Simpson's 3_8th.cpp
+│ ├── input.txt
+│ └── output.txt
+│
+├── Regression Methods
+│ │
+│ ├── Exponential Regression
+│ │ ├── Exponential Regression.cpp
+│ │ ├── input.txt
+│ │ └── output.txt
+│ │
+│ ├── Linear Regression
+│ │ ├── Linear Regression.cpp
+│ │ ├── input.txt
+│ │ └── output.txt
+│ │
+│ └── Polynomial Regression
+│ ├── Polynomial Regression.cpp
+│ ├── input.txt
+│ └── output.txt
+│
+├── Solution of Interpolation Methods
+│ │
+│ ├── Newton's Backward Interpolation
+│ │ ├── backward_interpolation.cpp
+│ │ ├── input.txt
+│ │ └── output.txt
+│ │
+│ ├── Newton's Divided Difference Interpolation
+│ │ ├── divided_interpolation.cpp
+│ │ ├── input.txt
+│ │ └── output.txt
+│ │
+│ └── Newton's Forward Interpolation
+│ ├── forward_interpolation.cpp
+│ ├── input.txt
+│ └── output.txt
+│
+├── Solution of Linear Equations
+│ │
+│ ├── Gauss Elimination
+│ │ ├── Gauss Elimination.cpp
+│ │ ├── input.txt
+│ │ └── output.txt
+│ │
+│ ├── Gauss Jordan Elimination
+│ │ ├── Gauss Jordan elimination.cpp
+│ │ ├── input.txt
+│ │ └── output.txt
+│ │
+│ ├── LU Decomposition
+│ │ ├── LU Decomposition.cpp
+│ │ ├── input.txt
+│ │ └── output.txt
+│ │
+│ └── Matrix Inversion Method
+│ ├── inversion.cpp
+│ ├── input.txt
+│ └── output.txt
+│
+├── Solution of Non-Linear Equations
+│ │
+│ ├── Bisection Method
+│ │ ├── bi_section.cpp
+│ │ ├── input.txt
+│ │ └── output.txt
+│ │
+│ ├── False Position Method
+│ │ ├── false_pos.cpp
+│ │ ├── input.txt
+│ │ └── output.txt
+│ │
+│ ├── Newton-Raphson Method
+│ │ ├── newton_raphson.cpp
+│ │ ├── input.txt
+│ │ └── output.txt
+│ │
+│ └── Secant Method
+│ ├── secant.cpp
+│ ├── input.txt
+│ └── output.txt
+│
+├── Solution of Numerical Differentiation
+│ ├── differentiation.cpp
+│ ├── input.txt
+│ └── output.txt
+│
+├── Solution of Numerical Integration
+│ │
+│ ├── Simpson's 1/3 Rule
+│ │ ├── Simpson's 1_3rd.cpp
+│ │ ├── input.txt
+│ │ └── output.txt
+│ │
+│ └── Simpson's 3/8 Rule
+│ ├── Simpson's 3_8th.cpp
+│ ├── input.txt
+│ └── output.txt
+│
+├── Solution of Ordinary Differential Equations
+│ └── Runge-Kutta Method
+│ ├── Runge-Kutta.cpp
+│ ├── input.txt
+│ └── output.txt
+│
+└── README.md
 ```
 [↑ Back to Table of Contents](#table-of-contents)
 
