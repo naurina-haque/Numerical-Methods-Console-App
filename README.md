@@ -119,11 +119,11 @@ This repository features a collection of programs designed to solve numerical pr
       
 - [Solution of Ordinary Differential Equations](#solution-of-ordinary-differential-equations)
 
-  - [Runge-Kutta Method](#rungekutta-method)
-    - [Theory](#rungekutta-theory)
-    - [Code](#rungekutta-code)
-    - [Input](#rungekutta-input)
-    - [Output](#rungekutta-output)      
+  - [Runge-Kutta Method](#runge-kutta-method)
+    - [Theory](#runge-kutta-theory)
+    - [Code](#runge-kutta-code)
+    - [Input](#runge-kutta-input)
+    - [Output](#runge-kutta-output)      
 ---
 
 ## Project Structure
@@ -922,15 +922,15 @@ x3 = <value>
 
 ## Solution of Ordinary Differential Equations
 
-### Runge-Kutta Method
+### Runge Kutta Method
 
-#### Runge-Kutta Theory
+#### Runge Kutta Theory
 
-#### Runge-Kutta Code
+#### Runge Kutta Code
 
-#### Runge-Kutta Input
+#### Runge Kutta Input
 
-#### Runge-Kutta Output
+#### Runge Kutta Output
 
 [↑ Back to Table of Contents](#table-of-contents)
 
