@@ -131,11 +131,6 @@ This repository features a collection of programs designed to solve numerical pr
 ```
 Numerical-Methods-Console-App/
 │
-├── Simpson's 3/8 Rule
-│ ├── Simpson's 3_8th.cpp
-│ ├── input.txt
-│ └── output.txt
-│
 ├── Regression Methods
 │ │
 │ ├── Exponential Regression
@@ -238,6 +233,9 @@ Numerical-Methods-Console-App/
 │ └── output.txt
 │
 └── README.md
+
+
+
 ```
 [↑ Back to Table of Contents](#table-of-contents)
 
