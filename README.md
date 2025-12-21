@@ -13,7 +13,6 @@ This repository features a collection of programs designed to solve numerical pr
 
 ## Table of Contents
 - [Project Structure](#project-structure)
-- [Usage](#usage)
 - [Solution of Non Linear Equations](#solution-of-non-linear-equations)
 
   - [Bisection Method](#bisection-method)
@@ -241,8 +240,6 @@ Numerical-Methods-Console-App/
 
 ---
 
-
-## Usage
 
 ## Solution of Non Linear Equations
 
